@@ -44,6 +44,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset state demo only
 				setStore({ ...store, demo: demo })
 			},
+			removeContact: (indice) => {
+				const store = getStore();
+				setStore( {listaContacto: 	
+					store.listaContacto.filter((item, index)=> {
+					return index != indice
+					})});
+			},
+
 			...exampleActions(getStore, getActions, setStore), //this will brings here the function exampleFunction, and it will be able to use store's states and actions
 			...usuarioActions(getStore, getActions, setStore),
 			...contactActions(getStore, getActions, setStore),

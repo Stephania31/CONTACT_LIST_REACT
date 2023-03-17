@@ -18,6 +18,14 @@ const Contactos = () => {
                     return (
                         <li key={index}>
                             {item.full_name} - {item.email} - {item.phone}
+
+                            <button className="btn btn-primary" type="button" onClick={()=>{actions.editContact(index, nombre)}}>
+                                Editar contacto
+                            </button>
+
+                            <button className="btn btn-danger" type="button" onClick={()=>{actions.deleteContact(index)}}>
+                                Eliminar contacto
+                            </button>
                         </li>
                     )
                 })}
